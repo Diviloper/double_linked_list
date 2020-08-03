@@ -1,6 +1,9 @@
 name: double_linked_list
 description: A Generic Double Linked List data structure.
-version: 1.0.1
+  This data structure allows constant time inserting at elements at both ends, and with access to any node,
+  also allows constant time inserting new elements before and after the node, as well as the deletion of this node.
+  It also allows iterating over the list in normal and reverse order.
+version: 1.0.2
 repository: https://github.com/Diviloper/double_linked_list
 
 environment:
