@@ -52,12 +52,12 @@ import 'package:double_linked_list/double_linked_list.dart';
 
 main() {
   final list = [1, 3, 5].toDoubleLinkedList();
-  for (var node = list.begin; !node.isEnd; node = node.next) {
+  for (var node = list.first; !node.isEnd; node = node.next) {
     node.insertAfter(node.content + 1);
   }
 }
 ```
-:warning: :warning: Program stuck at an endless loop.
+:warning:Program stuck at an endless loop.
 
 To avoid this, move to the inserted node:
 
@@ -66,7 +66,7 @@ import 'package:double_linked_list/double_linked_list.dart';
 
 main() {
   final list = [1, 3, 5].toDoubleLinkedList();
-  for (var node = list.begin; !node.isEnd; node = node.next) {
+  for (var node = list.first; !node.isEnd; node = node.next) {
     node = node.insertAfter(node.content + 1);
   }
 }
