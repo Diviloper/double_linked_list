@@ -105,4 +105,4 @@ Complete example at [example](example/double_linked_list_example.dart).
 
 Please file feature requests and bugs at the [issue tracker][tracker].
 
-[tracker]: http://example.com/issues/replaceme
+[tracker]: https://github.com/Diviloper/double_linked_list/issues
