@@ -1,9 +1,9 @@
 # Double Linked List
 A library presenting a generic double linked list.
 
-Double linked list structure:
+Double linked list structure implemented:
 
-![dll_structure](assets/double_linked_list_image.png | width=400)
+<img src="assets/double_linked_list_image.png" alt="dll_structure" width="400">
 
 ## Usage
 
