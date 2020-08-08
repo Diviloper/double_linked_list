@@ -8,27 +8,30 @@ class DoubleLinkedList<E> {
   Node<E> _begin;
   Node<E> _end;
 
+  /// Get the virtual node at the beginning of this list
   Node<E> get begin => _begin;
+
+  /// Get the virtual node at the end of this list
   Node<E> get end => _end;
 
-  /// Get the first inner node of [this].
-  /// If [this] is empty, then returns the [end] node.
+  /// Get the first inner node of this list.
+  /// If this list is empty, then returns the [end] node.
   Node<E> get first => begin.next;
 
-  /// Get the last inner node of [this].
-  /// If [this] is empty, then returns the [begin] node.
+  /// Get the last inner node of this list.
+  /// If this list is empty, then returns the [begin] node.
   Node<E> get last => end.previous;
 
-  /// Whether [this] is empty.
+  /// Whether this list is empty.
   bool get isEmpty => _length == 0;
 
-  /// Whether [this] is not empty.
+  /// Whether this list is not empty.
   bool get isNotEmpty => !isEmpty;
 
-  /// Get the number of elements in [this].
+  /// Get the number of elements in this list.
   int get length => _length;
 
-  /// Get a lazy iterable with all the elements in [this].
+  /// Get a lazy iterable with all the elements in this list.
   Iterable<E> get content sync* {
     for (var node = first; node != end; node = node.next) {
       yield node.content;
@@ -63,20 +66,20 @@ class DoubleLinkedList<E> {
   DoubleLinkedList.from(DoubleLinkedList<E> from)
       : this.fromIterable(from.content);
 
-  /// Creates a new [DoubleLinkedList] with the contents of [this].
+  /// Creates a new [DoubleLinkedList] with the contents of this list.
   /// Note that this does not perform a deep copy.
   DoubleLinkedList<E> copy() => DoubleLinkedList.from(this);
 
-  /// Creates a new [DoubleLinkedList] with the contents of the [this], applying [transform] to each element.
+  /// Creates a new [DoubleLinkedList] with the contents of the this list, applying [transform] to each element.
   /// Note that this does not perform a deep copy.
   /// For an in-place transformation, see [DoubleLinkedList.apply].
   DoubleLinkedList<T> map<T>(T Function(E element) transform) =>
       DoubleLinkedList.fromIterable(content.map(transform));
 
-  /// Calls [function] with each element of [this].
+  /// Calls [function] with each element of this list.
   void forEach(void Function(E element) function) => content.forEach(function);
 
-  /// Transforms each element of [this] by applying [transform] to each of them.
+  /// Transforms each element of this list by applying [transform] to each of them.
   /// For an out-of-place transformation, see [DoubleLinkedList.map].
   void apply(E Function(E element) transform) {
     for (var node = first; node != end; node = node.next) {
@@ -84,37 +87,37 @@ class DoubleLinkedList<E> {
     }
   }
 
-  /// Returns a new [DoubleLinkedList] with only the elements of [this] that satisfy [test].
+  /// Returns a new [DoubleLinkedList] with only the elements of this list that satisfy [test].
   DoubleLinkedList<E> where<T>(bool Function(E element) test) =>
       DoubleLinkedList.fromIterable(content.where(test));
 
-  /// Checks whether [this] contains [element].
+  /// Checks whether this list contains [element].
   bool contains(E element) => content.contains(element);
 
-  /// Reduces [this] to a single value by iteratively combining its elements using [combine].
-  /// If [this] is empty, then a [LinkedListException.noElement] is thrown.
-  /// If [this] has only one element, it is returned.
+  /// Reduces this list to a single value by iteratively combining its elements using [combine].
+  /// If this list is empty, then a [LinkedListException.noElement] is thrown.
+  /// If this list has only one element, it is returned.
   E reduce(E Function(E value, E element) combine) {
     if (isEmpty) throw LinkedListException.noElement();
     return content.reduce(combine);
   }
 
-  /// Reduces [this] to a single value by iteratively combining each element with an existing value.
+  /// Reduces this list to a single value by iteratively combining each element with an existing value.
   /// Uses [initialValue] as the initial value, then iterates through the
   /// elements and updates the value with each element using the [combine] function.
   T fold<T>(T initialValue, T Function(T value, E element) combine) =>
       content.fold(initialValue, combine);
 
-  /// Returns a [List] with the contents of [this]
+  /// Returns a [List] with the contents of this list
   List<E> toList() => content.toList();
 
-  /// Returns a [Set] with the contents of [this]
+  /// Returns a [Set] with the contents of this list
   Set<E> toSet() => content.toSet();
 
-  /// Checks whether any element in [this] satisfies [test]
+  /// Checks whether any element in this list satisfies [test]
   bool any(bool Function(E element) test) => content.any(test);
 
-  /// Checks whether every element in [this] satisfies [test]
+  /// Checks whether every element in this list satisfies [test]
   bool every(bool Function(E element) test) => content.every(test);
 
   /// Returns the first [Node] whose value satisfies [test].

@@ -25,4 +25,8 @@
 
 ### 1.0.6
 
-- Fix format issues and package description 
+- Fix format issues and package description
+
+### 1.0.7
+
+- Fix dartdoc documentation 

@@ -17,26 +17,26 @@ class Node<T> {
   /// Reference to the next [Node] in the [DoubleLinkedList]
   Node<T> get next => _next;
 
-  /// Value of the [Node], if [this] is an *end* node (i.e. the begin or end node),
+  /// Value of the [Node], if this list is an *end* node (i.e. the begin or end node),
   /// calling [content] throws an [LinkedListException.endNoContent]
   T get content {
     if (_isEnd) throw LinkedListException.endNoContent();
     return _content;
   }
 
-  /// Whether [this] is the begin node
+  /// Whether this list is the begin node
   bool get isBegin => _previous == this;
 
-  /// Whether [this] is the end node
+  /// Whether this list is the end node
   bool get isEnd => _next == this;
 
-  /// Whether [this] is the first node
+  /// Whether this list is the first node
   bool get isFirst => !isBegin && _previous == list.begin;
 
-  /// Whether [this] is the last node
+  /// Whether this list is the last node
   bool get isLast => !isEnd && _next == list.end;
 
-  /// Creates a new [Node] containing the value [element] right before [this] in [list]
+  /// Creates a new [Node] containing the value [element] right before this list in [list]
   Node<T> insertBefore(T element) {
     if (isBegin) throw LinkedListException.cannotInsertBeforeBegin();
     final newNode = Node._(list, element, previous: _previous, next: this);
@@ -46,7 +46,7 @@ class Node<T> {
     return newNode;
   }
 
-  /// Creates a new [Node] containing the value [element] right after [this] in [list]
+  /// Creates a new [Node] containing the value [element] right after this list in [list]
   Node<T> insertAfter(T element) {
     if (isEnd) throw LinkedListException.cannotInsertAfterEnd();
     final newNode = Node._(list, element, previous: this, next: _next);
@@ -56,7 +56,7 @@ class Node<T> {
     return newNode;
   }
 
-  /// Removes [this] from [list]
+  /// Removes this list from [list]
   Node<T> remove() {
     if (_isEnd) throw LinkedListException.cannotRemoveEnd();
     _next._previous = _previous;
