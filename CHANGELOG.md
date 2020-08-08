@@ -29,4 +29,8 @@
 
 ### 1.0.7
 
-- Fix dartdoc documentation 
+- Fix dartdoc documentation
+
+### 1.0.8
+
+- Fix format 
