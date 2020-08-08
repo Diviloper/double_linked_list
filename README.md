@@ -1,9 +1,7 @@
 # Double Linked List
 A library presenting a generic double linked list.
 
-# Since this library uses non nullability, it will be usable with Dart 2.10 :(
-
-Double linked list structure:
+Double linked list structure implemented:
 
 ![dll_structure](assets/double_linked_list_image.png)
 
