@@ -13,3 +13,7 @@
 ### 1.0.3
 
 - Change pubspec
+
+### 1.0.4
+
+- Make package nullable to be usable, non-nullable version will be 2.0.0 
