@@ -1,6 +1,7 @@
 import 'package:double_linked_list/double_linked_list.dart';
 
 //ignore_for_file: unused_local_variable
+//ignore_for_file: omit_local_variable_types
 
 void main() {
   final list = DoubleLinkedList.fromIterable([1, 2, 3]);

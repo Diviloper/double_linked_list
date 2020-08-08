@@ -13,7 +13,7 @@ void main() {
       expect(list.isNotEmpty, isTrue);
       expect(list.length, 5);
       var node = list.first;
-      for (int i = 1; i <= 5; ++i, node = node.next) {
+      for (var i = 1; i <= 5; ++i, node = node.next) {
         expect(node.content, i);
       }
     });
@@ -98,12 +98,14 @@ void main() {
       expect(called, [1, 2, 3, 4, 5]);
     });
 
-    test('apply transforms list by apllying the function passed to every item', () {
+    test('apply transforms list by apllying the function passed to every item',
+        () {
       list.apply((i) => i * 2);
       expect(list.content, [2, 4, 6, 8, 10]);
     });
 
-    test('where returns a new linked list with elements that passed function', () {
+    test('where returns a new linked list with elements that passed function',
+        () {
       final filteredList = list.where((e) => e.isEven);
       expect(filteredList.content, [2, 4]);
     });
@@ -125,10 +127,13 @@ void main() {
       });
 
       test('throws exception when no element satisfies test', () {
-        expect(() => list.firstWhere((e) => e < 0), throwsA(LinkedListException.noElement()));
+        expect(() => list.firstWhere((e) => e < 0),
+            throwsA(LinkedListException.noElement()));
       });
 
-      test('returns end node when no element satisfies test and orEnd is set to true', () {
+      test(
+          'returns end node when no element satisfies test and orEnd is set to true',
+          () {
         expect(list.firstWhere((e) => e < 0, orEnd: true), list.end);
       });
     });
@@ -140,10 +145,13 @@ void main() {
       });
 
       test('throws exception when no element satisfies test', () {
-        expect(() => list.lastWhere((e) => e < 0), throwsA(LinkedListException.noElement()));
+        expect(() => list.lastWhere((e) => e < 0),
+            throwsA(LinkedListException.noElement()));
       });
 
-      test('returns begin node when no element satisfies test and orBegin is set to true', () {
+      test(
+          'returns begin node when no element satisfies test and orBegin is set to true',
+          () {
         expect(list.lastWhere((e) => e < 0, orBegin: true), list.begin);
       });
     });

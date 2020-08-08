@@ -21,4 +21,8 @@
 ### 1.0.5
 
 - Change lower dart sdk constraints to 2.7.0 to allow extension methods
-- Change readme to show that package is usable 
+- Change readme to show that package is usable
+
+### 1.0.6
+
+- Fix format issues and package description 

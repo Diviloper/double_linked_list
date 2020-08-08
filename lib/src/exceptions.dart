@@ -15,14 +15,17 @@ class LinkedListException extends Equatable {
   LinkedListException.noElement() : this._('No element');
 
   /// Represents error that occurs when trying to remove a begin or end node
-  LinkedListException.cannotRemoveEnd() : this._('An end node cannot be removed');
+  LinkedListException.cannotRemoveEnd()
+      : this._('An end node cannot be removed');
 
   /// Represents error that occurs when trying to access the content of an end node
   LinkedListException.endNoContent() : this._('End node has no content');
 
   /// Represents error that occurs when trying to insert a node before the begin node
-  LinkedListException.cannotInsertBeforeBegin() : this._('A node cannot be inserted before begin node');
+  LinkedListException.cannotInsertBeforeBegin()
+      : this._('A node cannot be inserted before begin node');
 
   /// Represents error that occurs when trying to insert a node after the end node
-  LinkedListException.cannotInsertAfterEnd() : this._('A node cannot be inserted after end node');
+  LinkedListException.cannotInsertAfterEnd()
+      : this._('A node cannot be inserted after end node');
 }

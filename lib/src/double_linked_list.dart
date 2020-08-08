@@ -52,7 +52,7 @@ class DoubleLinkedList<E> {
   /// Note that this does not perform a deep copy.
   DoubleLinkedList.fromIterable(Iterable<E> contents) {
     _initialize();
-    Node<E> previousNode = begin;
+    var previousNode = begin;
     for (final element in contents) {
       previousNode = previousNode.insertAfter(element);
     }
@@ -60,7 +60,8 @@ class DoubleLinkedList<E> {
 
   /// Creates a new [DoubleLinkedList] with the contents of the passed [DoubleLinkedList].
   /// Note that this does not perform a deep copy.
-  DoubleLinkedList.from(DoubleLinkedList<E> from) : this.fromIterable(from.content);
+  DoubleLinkedList.from(DoubleLinkedList<E> from)
+      : this.fromIterable(from.content);
 
   /// Creates a new [DoubleLinkedList] with the contents of [this].
   /// Note that this does not perform a deep copy.
@@ -69,7 +70,8 @@ class DoubleLinkedList<E> {
   /// Creates a new [DoubleLinkedList] with the contents of the [this], applying [transform] to each element.
   /// Note that this does not perform a deep copy.
   /// For an in-place transformation, see [DoubleLinkedList.apply].
-  DoubleLinkedList<T> map<T>(T Function(E element) transform) => DoubleLinkedList.fromIterable(content.map(transform));
+  DoubleLinkedList<T> map<T>(T Function(E element) transform) =>
+      DoubleLinkedList.fromIterable(content.map(transform));
 
   /// Calls [function] with each element of [this].
   void forEach(void Function(E element) function) => content.forEach(function);
@@ -83,7 +85,8 @@ class DoubleLinkedList<E> {
   }
 
   /// Returns a new [DoubleLinkedList] with only the elements of [this] that satisfy [test].
-  DoubleLinkedList<E> where<T>(bool Function(E element) test) => DoubleLinkedList.fromIterable(content.where(test));
+  DoubleLinkedList<E> where<T>(bool Function(E element) test) =>
+      DoubleLinkedList.fromIterable(content.where(test));
 
   /// Checks whether [this] contains [element].
   bool contains(E element) => content.contains(element);
@@ -99,7 +102,8 @@ class DoubleLinkedList<E> {
   /// Reduces [this] to a single value by iteratively combining each element with an existing value.
   /// Uses [initialValue] as the initial value, then iterates through the
   /// elements and updates the value with each element using the [combine] function.
-  T fold<T>(T initialValue, T Function(T value, E element) combine) => content.fold(initialValue, combine);
+  T fold<T>(T initialValue, T Function(T value, E element) combine) =>
+      content.fold(initialValue, combine);
 
   /// Returns a [List] with the contents of [this]
   List<E> toList() => content.toList();
@@ -115,10 +119,10 @@ class DoubleLinkedList<E> {
 
   /// Returns the first [Node] whose value satisfies [test].
   Node<E> firstWhere(bool Function(E element) test, {bool orEnd = false}) {
-  /// If no such element exists, it throws [LinkedListException.noElement] if [orEnd] is false, or [end] otherwise.
+    /// If no such element exists, it throws [LinkedListException.noElement] if [orEnd] is false, or [end] otherwise.
 
-  /// Returns the first [Node] whose value satisfies [test].
-  /// If no such element exists, it throws [LinkedListException.noElement] if [orEnd] is false, or [end] otherwise.
+    /// Returns the first [Node] whose value satisfies [test].
+    /// If no such element exists, it throws [LinkedListException.noElement] if [orEnd] is false, or [end] otherwise.
     for (var node = first; node != end; node = node.next) {
       if (test(node.content)) return node;
     }
