@@ -5,8 +5,11 @@ part 'node.dart';
 /// Generic double-linked list data structure
 class DoubleLinkedList<E> {
   int _length = 0;
-  late final Node<E> begin;
-  late final Node<E> end;
+  Node<E> _begin;
+  Node<E> _end;
+
+  Node<E> get begin => _begin;
+  Node<E> get end => _end;
 
   /// Get the first inner node of [this].
   /// If [this] is empty, then returns the [end] node.
@@ -34,8 +37,8 @@ class DoubleLinkedList<E> {
 
   void _initialize() {
     _length = 0;
-    begin = Node._begin(this);
-    end = Node._end(this);
+    _begin = Node._begin(this);
+    _end = Node._end(this);
     begin._next = end;
     end._previous = begin;
   }

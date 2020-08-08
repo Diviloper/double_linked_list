@@ -2,7 +2,7 @@ import 'package:double_linked_list/double_linked_list.dart';
 import 'package:test/test.dart';
 
 void main() {
-  late DoubleLinkedList<int> list;
+  DoubleLinkedList<int> list;
 
   setUp(() {
     list = DoubleLinkedList.fromIterable([2, 3, 4]);

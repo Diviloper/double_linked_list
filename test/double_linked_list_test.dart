@@ -27,8 +27,8 @@ void main() {
   });
 
   group('getters', () {
-    late DoubleLinkedList<int> list;
-    late DoubleLinkedList<int> emptyList;
+    DoubleLinkedList<int> list;
+    DoubleLinkedList<int> emptyList;
 
     setUp(() {
       list = DoubleLinkedList.fromIterable([1, 2, 3, 4, 5]);
@@ -69,7 +69,7 @@ void main() {
   });
 
   group('methods', () {
-    late DoubleLinkedList<int> list;
+    DoubleLinkedList<int> list;
 
     setUp(() {
       list = DoubleLinkedList.fromIterable([1, 2, 3, 4, 5]);

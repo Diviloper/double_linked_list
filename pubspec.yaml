@@ -2,11 +2,11 @@ name: double_linked_list
 description: A Generic Double Linked List data structure.
   Allows constant time inserting at elements at both ends, before and after any element
   and constant time element deletion.
-version: 1.0.3
+version: 1.0.4
 repository: https://github.com/Diviloper/double_linked_list
 
 environment:
-  sdk: '>=2.10.0 <3.0.0'
+  sdk: '>=2.0.0 <3.0.0'
 
 dependencies:
   equatable: ^1.2.3

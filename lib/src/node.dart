@@ -6,9 +6,9 @@ part of 'double_linked_list.dart';
 class Node<T> {
   /// Reference to the [DoubleLinkedList] this [Node] belongs to
   final DoubleLinkedList<T> list;
-  T? _content;
-  late Node<T> _previous;
-  late Node<T> _next;
+  T _content;
+  Node<T> _previous;
+  Node<T> _next;
   final bool _isEnd;
 
   /// Reference to the previous [Node] in the [DoubleLinkedList]
@@ -21,7 +21,7 @@ class Node<T> {
   /// calling [content] throws an [LinkedListException.endNoContent]
   T get content {
     if (_isEnd) throw LinkedListException.endNoContent();
-    return _content as T;
+    return _content;
   }
 
   /// Whether [this] is the begin node
@@ -65,7 +65,7 @@ class Node<T> {
     return next;
   }
 
-  Node._(this.list, this._content, {Node<T>? previous, Node<T>? next}) : _isEnd = false {
+  Node._(this.list, this._content, {Node<T> previous, Node<T> next}) : _isEnd = false {
     _previous = previous ?? this;
     _next = next ?? this;
   }
