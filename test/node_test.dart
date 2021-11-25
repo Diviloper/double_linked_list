@@ -76,11 +76,13 @@ void main() {
     });
 
     test('throws exception when called on begin node', () {
-      expect(() => list.begin.content, throwsA(LinkedListException.endNoContent()));
+      expect(() => list.begin.content,
+          throwsA(LinkedListException.endNoContent()));
     });
 
     test('throws exception when called on end node', () {
-      expect(() => list.end.content, throwsA(LinkedListException.endNoContent()));
+      expect(
+          () => list.end.content, throwsA(LinkedListException.endNoContent()));
     });
   });
 
@@ -134,7 +136,8 @@ void main() {
     });
 
     test('throws exception when called on a begin node', () {
-      expect(() => list.begin.insertBefore(1), throwsA(LinkedListException.cannotInsertBeforeBegin()));
+      expect(() => list.begin.insertBefore(1),
+          throwsA(LinkedListException.cannotInsertBeforeBegin()));
       expect(list.length, 3);
     });
   });
@@ -189,7 +192,8 @@ void main() {
     });
 
     test('throws exception when called on an end node', () {
-      expect(() => list.end.insertAfter(5), throwsA(LinkedListException.cannotInsertAfterEnd()));
+      expect(() => list.end.insertAfter(5),
+          throwsA(LinkedListException.cannotInsertAfterEnd()));
       expect(list.length, 3);
     });
   });
@@ -236,9 +240,11 @@ void main() {
     });
 
     test('throws an exception when called on begin or end node', () {
-      expect(() => list.begin.remove(), throwsA(LinkedListException.cannotRemoveEnd()));
+      expect(() => list.begin.remove(),
+          throwsA(LinkedListException.cannotRemoveEnd()));
       expect(list.length, 3);
-      expect(() => list.end.remove(), throwsA(LinkedListException.cannotRemoveEnd()));
+      expect(() => list.end.remove(),
+          throwsA(LinkedListException.cannotRemoveEnd()));
       expect(list.length, 3);
     });
   });

@@ -65,7 +65,8 @@ class Node<T> {
     return next;
   }
 
-  Node._(this.list, this._content, {Node<T>? previous, Node<T>? next}) : _isEnd = false {
+  Node._(this.list, this._content, {Node<T>? previous, Node<T>? next})
+      : _isEnd = false {
     _previous = previous ?? this;
     _next = next ?? this;
   }
